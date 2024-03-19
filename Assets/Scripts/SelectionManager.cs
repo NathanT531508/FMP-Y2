@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,8 +23,8 @@ public class selectionmanager : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             var selectionTransform = hit.transform;
-
-            if (selectionTransform.GetComponent<InteractableObject>())
+            // && selectionTransform.GetComponent<InteractableObject>().playerInRange
+            if (selectionTransform.GetComponent<InteractableObject>() && selectionTransform.GetComponent<InteractableObject>().playerInRange)
             {
                 interaction_text.text = selectionTransform.GetComponent<InteractableObject>().GetItemName();
                 interaction_Info_UI.SetActive(true);
@@ -33,6 +34,10 @@ public class selectionmanager : MonoBehaviour
                 interaction_Info_UI.SetActive(false);
             }
 
+        }
+        else
+        {
+            interaction_Info_UI.SetActive(false);
         }
     }
 }
