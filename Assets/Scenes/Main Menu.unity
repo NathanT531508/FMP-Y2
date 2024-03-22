@@ -295,6 +295,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a49e64b153979a45b8f5d6a98fb8ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &120601191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 120601193}
+  - component: {fileID: 120601192}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &120601192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120601191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc9c83c03bbc9947b8b443d9dd3af56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryScreenUI: {fileID: 210316618}
+  isOpen: 0
+--- !u!4 &120601193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120601191}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.666718, y: -497.5048, z: -235.21738}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &129030321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8479691940275716760, guid: 9f88cf532161bde49acc1061735a38df, type: 3}
@@ -4135,7 +4181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73332af420e06b46b25de8c689f76ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 841814712}
 --- !u!114 &8882827542030908976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4190,3 +4235,4 @@ SceneRoots:
   - {fileID: 1836682984}
   - {fileID: 1665356598}
   - {fileID: 1366551136}
+  - {fileID: 120601193}
