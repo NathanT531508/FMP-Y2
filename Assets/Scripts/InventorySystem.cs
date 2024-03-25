@@ -9,7 +9,18 @@ public class InventorySystem : MonoBehaviour
     public static InventorySystem Instance { get; set; }
 
     public GameObject inventoryScreenUI;
+
+    public List<GameObject> slotList = new List<GameObject>();
+
+    public List<string> itemList = new List<string>();
+
+    private GameObject itemToAdd;
+
+    private GameObject whatSlotToEquip;
+
     public bool isOpen;
+
+    public bool IsFull;
 
 
     private void Awake()
@@ -28,6 +39,19 @@ public class InventorySystem : MonoBehaviour
     void Start()
     {
         isOpen = false;
+
+        PopulateSlotList();
+    }
+
+    private void PopulateSlotList()
+    {
+        foreach (Transform child in inventoryScreenUI.transform)
+        {
+            if (child.CompareTag("Slot"))
+            {
+                slotList.Add(child.gameObject);
+            }
+        }
     }
 
 
@@ -49,6 +73,11 @@ public class InventorySystem : MonoBehaviour
             inventoryScreenUI.SetActive(false);
             isOpen = false;
         }
+    }
+
+    public void AddToInventory(string itemName)
+    {
+
     }
 
 }
