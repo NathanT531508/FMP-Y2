@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4797535821749352301}
   - component: {fileID: 6457577749350715311}
   m_Layer: 5
-  m_Name: stone_inv
+  m_Name: Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

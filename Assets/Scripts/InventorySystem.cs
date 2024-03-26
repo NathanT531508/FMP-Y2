@@ -39,6 +39,7 @@ public class InventorySystem : MonoBehaviour
     void Start()
     {
         isOpen = false;
+        IsFull = false;
 
         PopulateSlotList();
     }
@@ -77,7 +78,54 @@ public class InventorySystem : MonoBehaviour
 
     public void AddToInventory(string itemName)
     {
+        
+            IsFull = true;
+            Debug.Log("inventory full");
+        
+        
+            whatSlotToEquip = FindNextEmptySlot();
 
+            itemToAdd = (GameObject) Instantiate(Resources.Load<GameObject>(itemName), whatSlotToEquip.transform.position, whatSlotToEquip.transform.rotation);
+            itemToAdd.transform.SetParent(whatSlotToEquip.transform);
+
+            itemList.Add(itemName);
+        
     }
+
+    private GameObject FindNextEmptySlot()
+    {
+        foreach(GameObject slot in slotList)
+        {
+            if(slot.transform.childCount == 0)
+            {
+                return slot;
+            }
+        }
+        return new GameObject();
+    }
+
+    public bool CheckIfFull()
+    {
+        int counter = 0;
+
+        foreach (GameObject slot in slotList)
+        {
+            if (slot.transform.childCount > 0)
+            {
+                counter += 1;
+            }
+            
+        }
+        if (counter == 21)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    
 
 }
