@@ -47,10 +47,10 @@ public class TestingSceneSwitching : MonoBehaviour {
 			LeanTest.expect( tweenCompleteCnt==3, "Scheduled tweens completed:"+sceneIter);
 			if(sceneIter<5){
 				sceneIter++;
-				SceneManager.LoadScene(0);
+				UnityEngine.SceneManagement.SceneManager.LoadScene(0);
 			}
 		});
 	}
 	
 	
-}
+} 
