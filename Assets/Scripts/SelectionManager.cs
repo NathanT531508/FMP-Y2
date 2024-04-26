@@ -12,6 +12,8 @@ public class selectionmanager : MonoBehaviour
     public static selectionmanager Instance { get; set; }
     public bool OnTarget;
 
+    public GameObject selectedObject;
+
     public GameObject interaction_Info_UI;
     Text interaction_text;
 
@@ -49,6 +51,7 @@ public class selectionmanager : MonoBehaviour
             {
 
                 OnTarget= true;
+                selectedObject = interactable.gameObject;
                 interaction_text.text = interactable.GetItemName();
                 interaction_Info_UI.SetActive(true);
             }
