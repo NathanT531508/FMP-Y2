@@ -149,7 +149,7 @@ public class InventorySystem : MonoBehaviour
     }
 
 
-    public void RecalculateList()
+    public void ReCalculateList()
     {
         itemList.Clear();
 

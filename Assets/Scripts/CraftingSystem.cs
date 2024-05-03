@@ -45,6 +45,8 @@ public class CraftingSystem : MonoBehaviour
         isOpen= false;
 
         toolsBTN = craftingScreenUI.transform.Find("ToolsButton").GetComponent<Button>();
+
+
         toolsBTN.onClick.AddListener(delegate { OpenToolsCategory(); });
 
         //Axe 
@@ -64,6 +66,7 @@ public class CraftingSystem : MonoBehaviour
 
     void CraftAnyItem(Blueprint blueprintToCraft)
     {
+        Debug.Log("craft");
         //adds item into inventory
         InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName);
         if (blueprintToCraft.numOfRequirements == 1)
@@ -78,16 +81,24 @@ public class CraftingSystem : MonoBehaviour
 
         InventorySystem.Instance.RemoveItem(blueprintToCraft.Req2, blueprintToCraft.Req2amount);
 
-        InventorySystem.Instance.RecalculateList();
+        StartCoroutine(calculate());
 
-            RefreshNeededItems();
+        RefreshNeededItems();
 
         //remove resources from inv
+    }
+
+    public IEnumerator calculate()
+    {
+        yield return new WaitForSeconds(1f);
+
+        InventorySystem.Instance.ReCalculateList();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.C) && !isOpen)
         {
 
@@ -121,21 +132,23 @@ public class CraftingSystem : MonoBehaviour
         inventoryItemList = InventorySystem.Instance.itemList;
 
         foreach(string itemName in inventoryItemList)
-        {
+       {
+            //if has stone/ stick add 1 to item count
             switch (itemName)
             {
-                case "Stone":
-
+                case "Stone(Clone)":
+                    stone_count += 1;
                     break;
 
-                case "Stick":
-
+                case "Stick(Clone)":
+                    stick_count += 1;
                     break;
             }
         }
-
+        // axe //
         AxeReq1.text = "3 Stone [" + stone_count + "]";
-        AxeReq2.text = "3 Stone [" + stick_count + "]";
+        Debug.Log("3 Stone [" + stone_count + "]");
+        AxeReq2.text = "3 Sticks [" + stick_count + "]";
 
         if(stone_count >= 3 && stick_count >= 3)
         {
@@ -146,4 +159,6 @@ public class CraftingSystem : MonoBehaviour
             craftAxeBTN.gameObject.SetActive(false);
         }
     }
+
+
 }
