@@ -94,6 +94,9 @@ public class InventorySystem : MonoBehaviour
             itemToAdd.transform.SetParent(whatSlotToEquip.transform);
 
             itemList.Add(itemName);
+
+        //ReCalculateList();
+        //CraftingSystem.Instance.RefreshNeededItems();
         
     }
 
@@ -136,16 +139,32 @@ public class InventorySystem : MonoBehaviour
     {
 
         int counter = amountToRemove;
-        for (var i = slotList.Count - 1; i >= 0; i--)
-        {
+        
+            for (var i = slotList.Count - 1; i >= 0; i--)
+            {
+
+
             if (slotList[i].transform.childCount > 0)
             {
-                if (slotList[i].transform.GetChild(0).name  == nameToRemove + "(Clone)" && counter !=0)
-                    Destroy(slotList[i].transform.GetChild(0).gameObject);
-                counter -= 1;
-            }
 
+                if (slotList[i].transform.GetChild(0).name == nameToRemove + "(Clone)" && counter != 0)
+                {
+                    Destroy(slotList[i].transform.GetChild(0).gameObject);
+                    counter -= 1;
+                }
+                    
+            }
         }
+                
+
+           
+        
+           
+
+                
+    
+    //CraftingSystem.Instance.RefreshItemsNeeded();
+
     }
 
 

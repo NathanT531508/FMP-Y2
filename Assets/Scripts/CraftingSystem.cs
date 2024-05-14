@@ -42,6 +42,7 @@ public class CraftingSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("start");
         isOpen= false;
 
         toolsBTN = craftingScreenUI.transform.Find("ToolsButton").GetComponent<Button>();
@@ -83,16 +84,17 @@ public class CraftingSystem : MonoBehaviour
 
         StartCoroutine(calculate());
 
-        RefreshNeededItems();
+        //RefreshNeededItems();
 
         //remove resources from inv
     }
 
     public IEnumerator calculate()
     {
-        yield return new WaitForSeconds(1f);
+        yield return 0;
 
         InventorySystem.Instance.ReCalculateList();
+        RefreshNeededItems();
     }
 
     // Update is called once per frame
