@@ -58,6 +58,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -95,6 +97,7 @@ GameObject:
   - component: {fileID: 954168668351717242}
   - component: {fileID: 7639827756298202207}
   - component: {fileID: 3435431961789126869}
+  - component: {fileID: 3985110387500672101}
   m_Layer: 0
   m_Name: treestump 1 (1)
   m_TagString: Untagged
@@ -131,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37098281f87fca043934e049e3333d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInRange: 0
   ItemName: Tree trunk
 --- !u!65 &3435431961789126869
 BoxCollider:
@@ -148,11 +152,32 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.8474908, y: 2.1022186, z: 3.4171448}
+  m_Center: {x: -0.009713888, y: -0.5511093, z: 0.14013672}
+--- !u!65 &3985110387500672101
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6437738292504777580}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.4228573, y: 2.1022186, z: 3.4171448}
-  m_Center: {x: -0.22203064, y: -0.5511093, z: 0.14013672}
+  m_Size: {x: 8.635759, y: 7.640438, z: 9.027893}
+  m_Center: {x: -0.07487011, y: 0.13302553, z: 0.6757393}
 --- !u!1 &6518704508513874384
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +236,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

@@ -947,6 +947,7 @@ GameObject:
   - component: {fileID: 9183975291139724554}
   - component: {fileID: 7151168780687461530}
   - component: {fileID: -3263416390896010765}
+  - component: {fileID: 1643711386431973919}
   m_Layer: 0
   m_Name: AppleTree
   m_TagString: Untagged
@@ -996,7 +997,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5925995, y: 2.571555, z: 0.37280667}
@@ -1059,3 +1060,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1643711386431973919
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8741570082714824855}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.6805851, y: 2.2421372, z: 3.6711447}
+  m_Center: {x: -0.05487231, y: 0.6210698, z: 0.056144163}
