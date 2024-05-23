@@ -174,23 +174,15 @@ public class InventorySystem : MonoBehaviour
 
         foreach (GameObject slot in slotList)
         {
-            if(slot.transform.childCount > 0 )
+            if (slot.transform.childCount > 0)
             {
-                string name = slot.transform.GetChild(0).name; //Stone clone
-                
-                string str2 = "(Clone)";
-                string result = name.Replace(str2, "");
-
+                string name = slot.transform.GetChild(0).name; //Example Stone (Clone)
+                string result = name.Replace("(Clone)", ""); // Remove "(Clone)"
                 itemList.Add(result);
-
-
             }
         }
-
-
-
     }
 
-    
+
 
 }
