@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Slot
   - pickable
+  - Teleporter
   layers:
   - Default
   - TransparentFX

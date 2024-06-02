@@ -43,7 +43,7 @@ public class AI_Movement : MonoBehaviour
         if (isWalking)
         {
 
-            animator.SetBool("isRunning", true);
+            //animator.SetBool("isRunning", true);
 
             walkCounter -= Time.deltaTime;
 
@@ -73,7 +73,7 @@ public class AI_Movement : MonoBehaviour
                 isWalking = false;
                 //stop movement
                 transform.position = stopPosition;
-                animator.SetBool("isRunning", false);
+                //animator.SetBool("isRunning", false);
                 //reset the waitCounter
                 waitCounter = waitTime;
             }
